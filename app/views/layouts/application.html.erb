@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Yourissu" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "My issu" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Yourissu" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -17,6 +17,7 @@
         </div>
       </nav>
     </div>
+
     <div id="main" role="main">
       <div class="container">
         <div class="content">
@@ -26,10 +27,9 @@
               <%= yield %>
             </div>
           </div>
-          <footer>
-          </footer>
         </div>
       </div> <!--! end of .container -->
     </div> <!--! end of #main -->
+
   </body>
 </html>

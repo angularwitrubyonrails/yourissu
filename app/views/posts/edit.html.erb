@@ -1,0 +1,9 @@
+<div class="span10">
+<div id="register-wraper">
+<%- model_class = Post -%>
+<legend>
+  <%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %>
+</legend>
+<%= render :partial => 'form' %>
+</div>
+</div>

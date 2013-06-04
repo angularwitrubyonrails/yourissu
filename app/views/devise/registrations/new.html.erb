@@ -1,11 +1,64 @@
-<h2>Sign up</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.error_notification %>
-  <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+<div class="container">
+  <div class="row">
+    <div class="span6">
+      <div class="register-info-wraper">
+        <div id="register-info">
+          <h1>You are about 30 seconds away from using this awesome app. Good choice!</h1>
+          <ul dir="rtl">
+            <li>Blah blah blah</li>
+            <li>That's why this app is so awesome</li>
+            <li>!So register, like, right NOW</li>
+            <li>Or don't, who cares</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <div class="span6">
+<div id="register-wraper">
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => '' }) do |f| %>
+
+<%= f.error_notification %>
+<%= display_base_errors resource %>
+
+<legend>Register to <span class="blue">Your issu</span></legend>
+<div class="body">
+
+<!-- first name -->
+<div class="control-group control-inline">
+<%= f.input :name, :autofocus => true %>
+</div>
+
+<!-- email -->
+<%= f.input :email, :required => true %>
+
+<!-- password -->
+<%= f.input :password, :required => true %>
+<%= f.input :password_confirmation, :required => true %>
+</div>
+<div class="footer">
+</label>
+<%= f.button :submit, 'Register', :class => 'btn btn-success' %>
+</div>
 <% end %>
 <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="white navbar-fixed-bottom">
+  Alread have an account?<%= link_to "Sign in", new_session_path(resource_name), :class => 'btn btn-black' %> 
+</footer>
+
+
+
+
+
+  
+  
+  
+  
+  
+
+

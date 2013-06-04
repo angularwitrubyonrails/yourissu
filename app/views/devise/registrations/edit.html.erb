@@ -1,4 +1,9 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="span6">
+<div id="register-wraper">
+<legend>
+Edit <span class="blue"><%= resource_name.to_s.humanize %></span>
+</legend>
+<div class="body">
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
@@ -7,8 +12,13 @@
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+</div>
+<div class="footer">
+  <%= f.button :submit, 'Update', :class => 'btn btn-success' %>
 <% end %>
 <h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, :class => "btn" %>
+</div>
+</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="register-info-wraper" style="background:rgba(253, 248, 248, 0.78)">
+<div style="position: relative; padding: 25px;">
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class="span8"><h2><%= post.title %></h2></div>
+    <div class="span3"><h3><%= l post.publish_data, :format => :long %></h3></div>
+  </div>
+  <div class="row">
+    <div class="span8">Author: <%= link_to post.user.name, root_path(:user => post.user.id) %></div>
+    <div class="span3">Categories:
+      <% post.categories.each do |cat| %>
+        <%= link_to cat.name, root_path(:cat => cat.id) %>
+      <% end %>
+    </div>
+  </div>
+  <blockquete><%= post.body %></blockquete>
+  <% if current_user && (current_user.has_role?(:admin) || current_user.id==post.user_id) %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-mini' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+  <% end %>
+  <hr />
+<% end %>
+
+<% if current_user %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>
+<% end %>
+</div>
+</div>

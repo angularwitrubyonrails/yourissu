@@ -1,6 +1,7 @@
-<h3>Users</h3>
-<div class="span8">
-<table class="table table-condensed">
+<div class="span10">
+<div id="register-wraper">
+<legend>Users</legend>
+<table class="table">
   <thead>
     <tr>
       <th>Username</th>
@@ -22,9 +23,10 @@
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
         <%= render user %>
       </td>
-      <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini') unless user == current_user %></td>
+      <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini btn-danger') unless user == current_user %></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+</div>
 </div>
